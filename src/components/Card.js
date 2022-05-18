@@ -12,18 +12,25 @@ import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlin
 import StarIcon from '@mui/icons-material/Star';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 
+import ModalEp from "../components/Modal";
+
 import './style-components.css'
 
-const converterData_estreia = (data_) => {
+
+export default function CardBase({ episodio }) {
+    const [open, setOpen] = React.useState(false);
+
+    const converterData_estreia = (data_) => {
     const data = new Date(data_);
     return data.toLocaleDateString("pt-BR");
 }
 
+const openModal = (episodio_) => {
+   setOpen(true);
+}
 
-
-export default function CardBase({ episodio }) {
     return (
-        <Card className="card">
+        <Card className="card" onClick={openModal(episodio)}>
             <CardContent>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={6}>

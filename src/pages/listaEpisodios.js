@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/client";
 
 import { INFO_EPISODES } from "../querys/index";
 
-import Card from "../components/Card"
+import Card from "../components/Card";
 
 export default function ListaEpisodios(props) {
     const { loading, error, data } = useQuery(INFO_EPISODES, { variables: { pagina: 1 } });
