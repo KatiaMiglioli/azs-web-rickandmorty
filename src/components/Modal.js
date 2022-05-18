@@ -8,23 +8,15 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Chip from '@mui/material/Chip';
 import FaceIcon from '@mui/icons-material/Face';
 
-export default function Modal_detalhesEpisodio() {
-    const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
+export default function Modal_detalhesEpisodio({open}) {
 
     const handleClose = () => {
-        setOpen(false);
+        
     };
 
 
     return (
         <div>
-            <Button variant="outlined" onClick={handleClickOpen}>
-                Open alert dialog
-            </Button>
             <Dialog
                 open={open}
                 onClose={handleClose}
